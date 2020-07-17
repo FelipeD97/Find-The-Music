@@ -4,7 +4,8 @@ import { Consumer } from "../../context";
 
 class Search extends Component {
     state = {
-        trackTitle: ''
+        trackTitle: '',
+        artist: ''
     }
 
     findTrack = (dispatch, e) => {
@@ -23,8 +24,31 @@ class Search extends Component {
                     type: 'SEARCH_TRACKS',
                     payload: res.data.message.body.track_list
                 });
-                
+
                this.setState({ trackTitle: '' }) 
+            })
+            .catch(err => console.log(err));
+
+    };
+
+    findArtist = (dispatch, e) => {
+        e.preventDefault();
+        
+        axios
+            .get(
+                `https://cors-anywhere.herokuapp.com/http://api.musixmatch.com/ws/1.1/artist.search?q_artist=${
+                    this.state.artist
+                }&page_size=5&apikey=${
+                    process.env.REACT_APP_MM_KEY
+                }`
+            )
+            .then(res => {
+                dispatch({
+                    type: 'SEARCH_ARTISTS',
+                    payload: res.data.message.body.artists
+                });
+
+               this.setState({ artist: '' }) 
             })
             .catch(err => console.log(err));
 
@@ -52,11 +76,24 @@ class Search extends Component {
                                     className="form-control form-control-lg" 
                                     placeholder="Song Title..." 
                                     name="trackTitle"
-                                    value={this.state.trackTitle}
+                                    value={this.state.track_list}
                                     onChange={this.onChange} 
                                     />
                                 </div>
-                                <button className="btn btn-danger btn-lg btn-block mb-5" type="submit">Get Track Lyrics</button>
+                                <button className="btn btn-danger btn-lg btn-block mb-5" type="submit">Get Track Info</button>
+                            </form>
+                            <form onSubmit={this.findArtist.bind(this, dispatch)}>
+                                <div className="form-group">
+                                    <input 
+                                    type="text" 
+                                    className="form-control form-control-lg" 
+                                    placeholder="Artist Name..." 
+                                    name="artist"
+                                    value={this.state.artist}
+                                    onChange={this.onChange} 
+                                    />
+                                </div>
+                                <button className="btn btn-danger btn-lg btn-block mb-5" type="submit">Get Artist Info</button>
                             </form>
                         </div>
                     )

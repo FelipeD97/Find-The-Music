@@ -11,6 +11,12 @@ const reducer = (state, action) => {
                 track_list: action.payload,
                 heading: 'Search Results'
             };
+        case 'SEARCH_ARTISTS':
+            return {
+                ... state,
+                artists: action.payload,
+                heading: 'Search Results'
+            };
             default:
                 return state;
     }
@@ -20,6 +26,7 @@ export class Provider extends Component {
     state = {
         track_list: [],
         heading: "Top 10 Tracks",
+        artists: [],
         dispatch: action => this.setState(state => reducer(state, action))
     };
 
