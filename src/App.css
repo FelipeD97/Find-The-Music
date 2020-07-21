@@ -1,0 +1,9 @@
+.search-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.search-bar {
+    width: 500px;
+}

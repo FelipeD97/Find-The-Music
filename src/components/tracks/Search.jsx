@@ -69,32 +69,34 @@ class Search extends Component {
                                 <i className="fas fa-music"></i> Search For A Song
                             </h1>
                             <p className="lead text-center">Get the lyrics and infromation for any song</p>
-                            <form onSubmit={this.findTrack.bind(this, dispatch)}>
-                                <div className="form-group">
-                                    <input 
-                                    type="text" 
-                                    className="form-control form-control-lg" 
-                                    placeholder="Song Title..." 
-                                    name="trackTitle"
-                                    value={this.state.track_list}
-                                    onChange={this.onChange} 
-                                    />
-                                </div>
-                                <button className="btn btn-danger btn-lg btn-block mb-5" type="submit">Get Track Info</button>
-                            </form>
-                            <form onSubmit={this.findArtist.bind(this, dispatch)}>
-                                <div className="form-group">
-                                    <input 
-                                    type="text" 
-                                    className="form-control form-control-lg" 
-                                    placeholder="Artist Name..." 
-                                    name="artist"
-                                    value={this.state.artist}
-                                    onChange={this.onChange} 
-                                    />
-                                </div>
-                                <button className="btn btn-danger btn-lg btn-block mb-5" type="submit">Get Artist Info</button>
-                            </form>
+                            <div className="search-container">
+                                <form onSubmit={this.findTrack.bind(this, dispatch)} className="search-bar">
+                                    <div className="form-group">
+                                        <input 
+                                        type="text" 
+                                        className="form-control form-control-lg" 
+                                        placeholder="Song Title..." 
+                                        name="trackTitle"
+                                        value={this.state.track_list}
+                                        onChange={this.onChange} 
+                                        />
+                                    </div>
+                                    <button className="btn btn-danger btn-lg btn-block mb-5" type="submit">Get Track Info</button>
+                                </form>
+                                <form onSubmit={this.findArtist.bind(this, dispatch)} className="search-bar">
+                                    <div className="form-group">
+                                        <input 
+                                        type="text" 
+                                        className="form-control form-control-lg" 
+                                        placeholder="Artist Name..." 
+                                        name="artist"
+                                        value={this.state.artist}
+                                        onChange={this.onChange} 
+                                        />
+                                    </div>
+                                    <button className="btn btn-danger btn-lg btn-block mb-5" type="submit">Get Artist Info</button>
+                                </form>
+                            </div>
                         </div>
                     )
                 }}
