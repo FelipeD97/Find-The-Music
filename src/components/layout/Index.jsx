@@ -8,6 +8,7 @@ const Index = () => {
         <React.Fragment>
             <Search />
             <Tracks />
+            <Artists />
         </React.Fragment>
     );
 };

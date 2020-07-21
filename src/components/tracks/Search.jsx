@@ -45,7 +45,7 @@ class Search extends Component {
             .then(res => {
                 dispatch({
                     type: 'SEARCH_ARTISTS',
-                    payload: res.data.message.body.artists
+                    payload: res.data.message.body.artist_list
                 });
 
                this.setState({ artist: '' }) 

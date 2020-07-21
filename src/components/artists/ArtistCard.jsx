@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 
-const Artist = (props) => {
+const ArtistCard = (props) => {
     const { artist } = props;
 
     return (
@@ -18,4 +18,4 @@ const Artist = (props) => {
     )
 }
 
-export default Artist;
+export default ArtistCard;

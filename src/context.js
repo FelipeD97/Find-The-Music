@@ -9,13 +9,15 @@ const reducer = (state, action) => {
             return {
                 ...state,
                 track_list: action.payload,
-                heading: 'Search Results'
+                heading: 'Search Results',
+                artists: []
             };
         case 'SEARCH_ARTISTS':
             return {
                 ... state,
                 artists: action.payload,
-                heading: 'Search Results'
+                heading: 'Artist Results',
+                track_list: []
             };
             default:
                 return state;

@@ -11,7 +11,7 @@ class Tracks extends Component {
                     //pulls the variables from the value in context to use in this component w/o saying value.item
                     const { track_list, heading } = value;
 
-                    if(track_list === undefined || track_list.length === 0) {
+                    if(track_list === undefined) {
                         return <Spinner />
                     }
                     else {
