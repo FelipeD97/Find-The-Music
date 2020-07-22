@@ -81,7 +81,7 @@ class Search extends Component {
                                         onChange={this.onChange} 
                                         />
                                     </div>
-                                    <button className="btn btn-danger btn-lg btn-block mb-5" type="submit">Get Track Info</button>
+                                    <button className="btn btn-dark btn-lg btn-block mb-5" type="submit">Get Track Info</button>
                                 </form>
                                 <form onSubmit={this.findArtist.bind(this, dispatch)} className="search-bar">
                                     <div className="form-group">
@@ -94,7 +94,7 @@ class Search extends Component {
                                         onChange={this.onChange} 
                                         />
                                     </div>
-                                    <button className="btn btn-danger btn-lg btn-block mb-5" type="submit">Get Artist Info</button>
+                                    <button className="btn btn-dark btn-lg btn-block mb-5" type="submit">Get Artist Info</button>
                                 </form>
                             </div>
                         </div>

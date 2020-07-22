@@ -5,6 +5,7 @@ import Navbar from "./components/layout/Navbar";
 import Index from "./components/layout/Index";
 import Lyrics from "./components/tracks/Lyrics";
 import Artists from "./components/artists/Artists";
+import Artist from "./components/artists/Artist";
 
 import { Provider } from "./context";
 
@@ -21,6 +22,7 @@ function App() {
               <Route exact path="/" component={Index} />
               <Route exact path="/lyrics/track/:id" component={Lyrics} />
               <Route exact path="/artists/:id" component={Artists} />
+              <Route exact path="/artist/:id" component={Artist} />
             </Switch>
           </div> 
         </React.Fragment>

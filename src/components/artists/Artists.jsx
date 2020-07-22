@@ -9,7 +9,7 @@ class Artists extends Component {
             <Consumer>
                 {value => {
 
-                    const { artists} = value;
+                    const { artists } = value;
 
                     if(artists === undefined) {
                         return <Spinner />
